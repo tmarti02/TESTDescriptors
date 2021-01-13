@@ -1,0 +1,374 @@
+Symbol	Definition	Category
+MOMI1	X-principal component	MOMI
+MOMI2	Y-principal component	MOMI
+MOMI3	Z-principal component	MOMI
+MOMI4	X/Y ratio	MOMI
+MOMI5	X/Z ratio	MOMI
+MOMI6	Y/Z ratio	MOMI
+MOMI7	radius of gyration of	MOMI
+PNSA1	Partial negative surface area 	CPSA
+PPSA1	Partial positive surface area 	CPSA
+PNSA2	Total charge weighted negative surface area 	CPSA
+PPSA2	Total charge weighted positive surface area 	CPSA
+PNSA3	Atomic charge weighted negative surface area 	CPSA
+PPSA3	Atomic charge weighted positive surface area 	CPSA
+DPSA1	Difference in charged partial surface area 	CPSA
+DPSA2	Difference in total charge weighted surface area 	CPSA
+DPSA3	Difference in atomic charge weighted surface area 	CPSA
+FNSA1	Fractional charged partial negative surface area 1 	CPSA
+FNSA2	Fractional charged partial negative surface area 2 	CPSA
+FNSA3	Fractional charged partial negative surface area 3 	CPSA
+FPSA1	Fractional charged partial positive surface area 1 	CPSA
+FFSA2	Fractional charged partial positive surface area 2 	CPSA
+FPSA3	Fractional charged partial positive surface area 3 	CPSA
+WNSA1	Surface weighted charged partial negative surface area 1 	CPSA
+WNSA2	Surface weighted charged partial negative surface area 2 	CPSA
+WNSA3	Surface weighted charged partial negative surface area 3 	CPSA
+WPSA1	Surface weighted charged partial positive surface area 1 	CPSA
+WPSA2	Surface weighted charged partial positive surface area 2 	CPSA
+WPSA3	Surface weighted charged partial positive surface area 3 	CPSA
+RNCG	Relative negative charge 	CPSA
+RPCG	Relative positive charge 	CPSA
+RNCS	Relative negative charge surface area 	CPSA
+RPCS	Relative positive charge surface area 	CPSA
+THSA	Total hydrophobic surface area 	CPSA
+TPSA	Total polar surface area 	CPSA
+RHSA	Relative hydrophobic surface area 	CPSA
+RPSA	Relative polar surface area 	CPSA
+DP01	molecular profile no. 01	Randic molecular profile
+DP02	molecular profile no. 02	Randic molecular profile
+DP03	molecular profile no. 03	Randic molecular profile
+DP04	molecular profile no. 04	Randic molecular profile
+DP05	molecular profile no. 05	Randic molecular profile
+DP06	molecular profile no. 06	Randic molecular profile
+DP07	molecular profile no. 07	Randic molecular profile
+DP08	molecular profile no. 08	Randic molecular profile
+DP09	molecular profile no. 09	Randic molecular profile
+DP10	molecular profile no. 10	Randic molecular profile
+DP11	molecular profile no. 11	Randic molecular profile
+DP12	molecular profile no. 12	Randic molecular profile
+DP13	molecular profile no. 13	Randic molecular profile
+DP14	molecular profile no. 14	Randic molecular profile
+DP15	molecular profile no. 15	Randic molecular profile
+DP16	molecular profile no. 16	Randic molecular profile
+DP17	molecular profile no. 17	Randic molecular profile
+DP18	molecular profile no. 18	Randic molecular profile
+DP19	molecular profile no. 19	Randic molecular profile
+DP20	molecular profile no. 20	Randic molecular profile
+SP01	shape profile no. 01	Randic molecular profile
+SP02	shape profile no. 02	Randic molecular profile
+SP03	shape profile no. 03	Randic molecular profile
+SP04	shape profile no. 04	Randic molecular profile
+SP05	shape profile no. 05	Randic molecular profile
+SP06	shape profile no. 06	Randic molecular profile
+SP07	shape profile no. 07	Randic molecular profile
+SP08	shape profile no. 08	Randic molecular profile
+SP09	shape profile no. 09	Randic molecular profile
+SP10	shape profile no. 10	Randic molecular profile
+SP11	shape profile no. 11	Randic molecular profile
+SP12	shape profile no. 12	Randic molecular profile
+SP13	shape profile no. 13	Randic molecular profile
+SP14	shape profile no. 14	Randic molecular profile
+SP15	shape profile no. 15	Randic molecular profile
+SP16	shape profile no. 16	Randic molecular profile
+SP17	shape profile no. 17	Randic molecular profile
+SP18	shape profile no. 18	Randic molecular profile
+SP19	shape profile no. 19	Randic molecular profile
+SP20	shape profile no. 20	Randic molecular profile
+SHP2	average shape profile index of order 2 (SHP2)	Randic molecular profile
+L1u	1st component size directional WHIM index / unweighted	Whim
+L2u	2nd component size directional WHIM index / unweighted	Whim
+L3u	3rd component size directional WHIM index / unweighted	Whim
+P1u	1st component shape directional WHIM index / unweighted	Whim
+P2u	2nd component shape directional WHIM index / unweighted	Whim
+G1u	1st component symmetry directional WHIM index / unweighted	Whim
+G2u	2nd component symmetry directional WHIM index / unweighted	Whim
+G3u	3rd component symmetry directional WHIM index / unweighted	Whim
+E1u	1st component accessibility directional WHIM index / unweighted	Whim
+E2u	2nd component accessibility directional WHIM index / unweighted	Whim
+E3u	3rd component accessibility directional WHIM index / unweighted	Whim
+L1m	1st component size directional WHIM index / weighted by atomic masses	Whim
+L2m	2nd component size directional WHIM index / weighted by atomic masses	Whim
+L3m	3rd component size directional WHIM index / weighted by atomic masses	Whim
+P1m	1st component shape directional WHIM index / weighted by atomic masses	Whim
+P2m	2nd component shape directional WHIM index / weighted by atomic masses	Whim
+G1m	1st component symmetry directional WHIM index / weighted by atomic masses	Whim
+G2m	2nd component symmetry directional WHIM index / weighted by atomic masses	Whim
+G3m	3rd component symmetry directional WHIM index / weighted by atomic masses	Whim
+E1m	1st component accessibility directional WHIM index / weighted by atomic masses	Whim
+E2m	2nd component accessibility directional WHIM index / weighted by atomic masses	Whim
+E3m	3rd component accessibility directional WHIM index / weighted by atomic masses	Whim
+L1v	1st component size directional WHIM index / weighted by atomic van der Waals volumes	Whim
+L2v	2nd component size directional WHIM index / weighted by atomic van der Waals volumes	Whim
+L3v	3rd component size directional WHIM index / weighted by atomic van der Waals volumes	Whim
+P1v	1st component shape directional WHIM index / weighted by atomic van der Waals volumes	Whim
+P2v	2nd component shape directional WHIM index / weighted by atomic van der Waals volumes	Whim
+G1v	1st component symmetry directional WHIM index / weighted by atomic van der Waals volumes	Whim
+G2v	2nd component symmetry directional WHIM index / weighted by atomic van der Waals volumes	Whim
+G3v	3rd component symmetry directional WHIM index / weighted by atomic van der Waals volumes	Whim
+E1v	1st component accessibility directional WHIM index / weighted by atomic van der Waals volumes	Whim
+E2v	2nd component accessibility directional WHIM index / weighted by atomic van der Waals volumes	Whim
+E3v	3rd component accessibility directional WHIM index / weighted by atomic van der Waals volumes	Whim
+L1e	1st component size directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+L2e	2nd component size directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+L3e	3rd component size directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+P1e	1st component shape directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+P2e	2nd component shape directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+G1e	1st component symmetry directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+G2e	2nd component symmetry directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+G3e	3rd component symmetry directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+E1e	1st component accessibility directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+E2e	2nd component accessibility directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+E3e	3rd component accessibility directional WHIM index / weighted by atomic Sanderson electronegativities	Whim
+L1p	1st component size directional WHIM index / weighted by atomic polarizabilities	Whim
+L2p	2nd component size directional WHIM index / weighted by atomic polarizabilities	Whim
+L3p	3rd component size directional WHIM index / weighted by atomic polarizabilities	Whim
+P1p	1st component shape directional WHIM index / weighted by atomic polarizabilities	Whim
+P2p	2nd component shape directional WHIM index / weighted by atomic polarizabilities	Whim
+G1p	1st component symmetry directional WHIM index / weighted by atomic polarizabilities	Whim
+G2p	2nd component symmetry directional WHIM index / weighted by atomic polarizabilities	Whim
+G3p	3rd component symmetry directional WHIM index / weighted by atomic polarizabilities	Whim
+E1p	1st component accessibility directional WHIM index / weighted by atomic polarizabilities	Whim
+E2p	2nd component accessibility directional WHIM index / weighted by atomic polarizabilities	Whim
+E3p	3rd component accessibility directional WHIM index / weighted by atomic polarizabilities	Whim
+L1s	1st component size directional WHIM index / weighted by atomic electrotopological states	Whim
+L2s	2nd component size directional WHIM index / weighted by atomic electrotopological states	Whim
+L3s	3rd component size directional WHIM index / weighted by atomic electrotopological states	Whim
+P1s	1st component shape directional WHIM index / weighted by atomic electrotopological states	Whim
+P2s	2nd component shape directional WHIM index / weighted by atomic electrotopological states	Whim
+G1s	1st component symmetry directional WHIM index / weighted by atomic electrotopological states	Whim
+G2s	2nd component symmetry directional WHIM index / weighted by atomic electrotopological states	Whim
+G3s	3rd component symmetry directional WHIM index / weighted by atomic electrotopological states	Whim
+E1s	1st component accessibility directional WHIM index / weighted by atomic electrotopological states	Whim
+E2s	2nd component accessibility directional WHIM index / weighted by atomic electrotopological states	Whim
+E3s	3rd component accessibility directional WHIM index / weighted by atomic electrotopological states	Whim
+Tu	T total size index / unweighted	Whim
+Tm	T total size index / weighted by atomic masses	Whim
+Tv	T total size index / weighted by atomic van der Waals volumes	Whim
+Te	T total size index / weighted by atomic Sanderson electronegativities	Whim
+Tp	T total size index / weighted by atomic polarizabilities	Whim
+Ts	T total size index / weighted by atomic electrotopological states	Whim
+Au	A total size index / unweighted	Whim
+Am	A total size index / weighted by atomic masses	Whim
+Av	A total size index / weighted by atomic van der Waals volumes	Whim
+Ae	A total size index / weighted by atomic Sanderson electronegativities	Whim
+Ap	A total size index / weighted by atomic polarizabilities	Whim
+As	A total size index / weighted by atomic electrotopological states	Whim
+Vu	V total size index / unweighted	Whim
+Vm	V total size index / weighted by atomic masses	Whim
+Vv	V total size index / weighted by atomic van der Waals volumes	Whim
+Ve	V total size index / weighted by atomic Sanderson electronegativities	Whim
+Vp	V total size index / weighted by atomic polarizabilities	Whim
+Vs	V total size index / weighted by atomic electrotopological states	Whim
+Gu	G total symmetry index / unweighted	Whim
+Gm	G total symmetry index / weighted by atomic masses	Whim
+Gs	G total symmetry index / weighted by atomic electrotopological states	Whim
+Ku	K global shape index / unweighted	Whim
+Km	K global shape index / weighted by atomic masses	Whim
+Kv	K global shape index / weighted by atomic van der Waals volumes	Whim
+Ke	K global shape index / weighted by atomic Sanderson electronegativities	Whim
+Kp	K global shape index / weighted by atomic polarizabilities	Whim
+Ks	K global shape index / weighted by atomic electrotopological states	Whim
+Du	D total accessibility index / unweighted	Whim
+Dm	D total accessibility index / weighted by atomic masses	Whim
+Dv	D total accessibility index / weighted by atomic van der Waals volumes	Whim
+De	D total accessibility index / weighted by atomic Sanderson electronegativities	Whim
+Dp	D total accessibility index / weighted by atomic polarizabilities	Whim
+Ds	D total accessibility index / weighted by atomic electrotopological states	Whim
+HGM	geometric mean on the leverage magnitude	Getaway
+ITH	total information content on the leverage equality	Getaway
+ISH	standardized information content on the leverage equality	Getaway
+HIC	mean information content on the leverage magnitude	Getaway
+H0u	H autocorrelation of lag 0 / unweighted	Getaway
+H1u	H autocorrelation of lag 1 / unweighted	Getaway
+H2u	H autocorrelation of lag 2 / unweighted	Getaway
+H3u	H autocorrelation of lag 3 / unweighted	Getaway
+H4u	H autocorrelation of lag 4 / unweighted	Getaway
+H5u	H autocorrelation of lag 5 / unweighted	Getaway
+H6u	H autocorrelation of lag 6 / unweighted	Getaway
+H7u	H autocorrelation of lag 7 / unweighted	Getaway
+H8u	H autocorrelation of lag 8 / unweighted	Getaway
+HTu	H total index / unweighted	Getaway
+HATS0u	leverage-weighted autocorrelation of lag 0 / unweighted	Getaway
+HATS1u	leverage-weighted autocorrelation of lag 1 / unweighted	Getaway
+HATS2u	leverage-weighted autocorrelation of lag 2 / unweighted	Getaway
+HATS3u	leverage-weighted autocorrelation of lag 3 / unweighted	Getaway
+HATS4u	leverage-weighted autocorrelation of lag 4 / unweighted	Getaway
+HATS5u	leverage-weighted autocorrelation of lag 5 / unweighted	Getaway
+HATS6u	leverage-weighted autocorrelation of lag 6 / unweighted	Getaway
+HATS7u	leverage-weighted autocorrelation of lag 7 / unweighted	Getaway
+HATS8u	leverage-weighted autocorrelation of lag 8 / unweighted	Getaway
+HATSu	leverage-weighted total index / unweighted	Getaway
+H0m	H autocorrelation of lag 0 / weighted by atomic masses	Getaway
+H1m	H autocorrelation of lag 1 / weighted by atomic masses	Getaway
+H2m	H autocorrelation of lag 2 / weighted by atomic masses	Getaway
+H3m	H autocorrelation of lag 3 / weighted by atomic masses	Getaway
+H4m	H autocorrelation of lag 4 / weighted by atomic masses	Getaway
+H5m	H autocorrelation of lag 5 / weighted by atomic masses	Getaway
+H6m	H autocorrelation of lag 6 / weighted by atomic masses	Getaway
+H7m	H autocorrelation of lag 7 / weighted by atomic masses	Getaway
+H8m	H autocorrelation of lag 8 / weighted by atomic masses	Getaway
+HTm	H total index / weighted by atomic masses	Getaway
+HATS0m	leverage-weighted autocorrelation of lag 0 / weighted by atomic masses	Getaway
+HATS1m	leverage-weighted autocorrelation of lag 1 / weighted by atomic masses	Getaway
+HATS2m	leverage-weighted autocorrelation of lag 2 / weighted by atomic masses	Getaway
+HATS3m	leverage-weighted autocorrelation of lag 3 / weighted by atomic masses	Getaway
+HATS4m	leverage-weighted autocorrelation of lag 4 / weighted by atomic masses	Getaway
+HATS5m	leverage-weighted autocorrelation of lag 5 / weighted by atomic masses	Getaway
+HATS6m	leverage-weighted autocorrelation of lag 6 / weighted by atomic masses	Getaway
+HATS7m	leverage-weighted autocorrelation of lag 7 / weighted by atomic masses	Getaway
+HATS8m	leverage-weighted autocorrelation of lag 8 / weighted by atomic masses	Getaway
+HATSm	leverage-weighted total index / weighted by atomic masses	Getaway
+H0v	H autocorrelation of lag 0 / weighted by atomic van der Waals volumes	Getaway
+H1v	H autocorrelation of lag 1 / weighted by atomic van der Waals volumes	Getaway
+H2v	H autocorrelation of lag 2 / weighted by atomic van der Waals volumes	Getaway
+H3v	H autocorrelation of lag 3 / weighted by atomic van der Waals volumes	Getaway
+H4v	H autocorrelation of lag 4 / weighted by atomic van der Waals volumes	Getaway
+H5v	H autocorrelation of lag 5 / weighted by atomic van der Waals volumes	Getaway
+H6v	H autocorrelation of lag 6 / weighted by atomic van der Waals volumes	Getaway
+H7v	H autocorrelation of lag 7 / weighted by atomic van der Waals volumes	Getaway
+H8v	H autocorrelation of lag 8 / weighted by atomic van der Waals volumes	Getaway
+HTv	H total index / weighted by atomic van der Waals volumes	Getaway
+HATS0v	leverage-weighted autocorrelation of lag 0 / weighted by atomic van der Waals volumes	Getaway
+HATS1v	leverage-weighted autocorrelation of lag 1 / weighted by atomic van der Waals volumes	Getaway
+HATS2v	leverage-weighted autocorrelation of lag 2 / weighted by atomic van der Waals volumes	Getaway
+HATS3v	leverage-weighted autocorrelation of lag 3 / weighted by atomic van der Waals volumes	Getaway
+HATS4v	leverage-weighted autocorrelation of lag 4 / weighted by atomic van der Waals volumes	Getaway
+HATS5v	leverage-weighted autocorrelation of lag 5 / weighted by atomic van der Waals volumes	Getaway
+HATS6v	leverage-weighted autocorrelation of lag 6 / weighted by atomic van der Waals volumes	Getaway
+HATS7v	leverage-weighted autocorrelation of lag 7 / weighted by atomic van der Waals volumes	Getaway
+HATS8v	leverage-weighted autocorrelation of lag 8 / weighted by atomic van der Waals volumes	Getaway
+HATSv	leverage-weighted total index / weighted by atomic van der Waals volumes	Getaway
+H0e	H autocorrelation of lag 0 / weighted by atomic Sanderson electronegativities	Getaway
+H1e	H autocorrelation of lag 1 / weighted by atomic Sanderson electronegativities	Getaway
+H2e	H autocorrelation of lag 2 / weighted by atomic Sanderson electronegativities	Getaway
+H3e	H autocorrelation of lag 3 / weighted by atomic Sanderson electronegativities	Getaway
+H4e	H autocorrelation of lag 4 / weighted by atomic Sanderson electronegativities	Getaway
+H5e	H autocorrelation of lag 5 / weighted by atomic Sanderson electronegativities	Getaway
+H6e	H autocorrelation of lag 6 / weighted by atomic Sanderson electronegativities	Getaway
+H7e	H autocorrelation of lag 7 / weighted by atomic Sanderson electronegativities	Getaway
+H8e	H autocorrelation of lag 8 / weighted by atomic Sanderson electronegativities	Getaway
+HTe	H total index / weighted by atomic Sanderson electronegativities	Getaway
+HATS0e	leverage-weighted autocorrelation of lag 0 / weighted by atomic Sanderson electronegativities	Getaway
+HATS1e	leverage-weighted autocorrelation of lag 1 / weighted by atomic Sanderson electronegativities	Getaway
+HATS2e	leverage-weighted autocorrelation of lag 2 / weighted by atomic Sanderson electronegativities	Getaway
+HATS3e	leverage-weighted autocorrelation of lag 3 / weighted by atomic Sanderson electronegativities	Getaway
+HATS4e	leverage-weighted autocorrelation of lag 4 / weighted by atomic Sanderson electronegativities	Getaway
+HATS5e	leverage-weighted autocorrelation of lag 5 / weighted by atomic Sanderson electronegativities	Getaway
+HATS6e	leverage-weighted autocorrelation of lag 6 / weighted by atomic Sanderson electronegativities	Getaway
+HATS7e	leverage-weighted autocorrelation of lag 7 / weighted by atomic Sanderson electronegativities	Getaway
+HATS8e	leverage-weighted autocorrelation of lag 8 / weighted by atomic Sanderson electronegativities	Getaway
+HATSe	leverage-weighted total index / weighted by atomic Sanderson electronegativities	Getaway
+H0p	H autocorrelation of lag 0 / weighted by atomic polarizabilities	Getaway
+H1p	H autocorrelation of lag 1 / weighted by atomic polarizabilities	Getaway
+H2p	H autocorrelation of lag 2 / weighted by atomic polarizabilities	Getaway
+H3p	H autocorrelation of lag 3 / weighted by atomic polarizabilities	Getaway
+H4p	H autocorrelation of lag 4 / weighted by atomic polarizabilities	Getaway
+H5p	H autocorrelation of lag 5 / weighted by atomic polarizabilities	Getaway
+H6p	H autocorrelation of lag 6 / weighted by atomic polarizabilities	Getaway
+H7p	H autocorrelation of lag 7 / weighted by atomic polarizabilities	Getaway
+H8p	H autocorrelation of lag 8 / weighted by atomic polarizabilities	Getaway
+HTp	H total index / weighted by atomic polarizabilities	Getaway
+HATS0p	leverage-weighted autocorrelation of lag 0 / weighted by atomic polarizabilities	Getaway
+HATS1p	leverage-weighted autocorrelation of lag 1 / weighted by atomic polarizabilities	Getaway
+HATS2p	leverage-weighted autocorrelation of lag 2 / weighted by atomic polarizabilities	Getaway
+HATS3p	leverage-weighted autocorrelation of lag 3 / weighted by atomic polarizabilities	Getaway
+HATS4p	leverage-weighted autocorrelation of lag 4 / weighted by atomic polarizabilities	Getaway
+HATS5p	leverage-weighted autocorrelation of lag 5 / weighted by atomic polarizabilities	Getaway
+HATS6p	leverage-weighted autocorrelation of lag 6 / weighted by atomic polarizabilities	Getaway
+HATS7p	leverage-weighted autocorrelation of lag 7 / weighted by atomic polarizabilities	Getaway
+HATS8p	leverage-weighted autocorrelation of lag 8 / weighted by atomic polarizabilities	Getaway
+HATSp	leverage-weighted total index / weighted by atomic polarizabilities	Getaway
+RCON	Randic-type R matrix connectivity	Getaway
+RARS	R matrix average row sum	Getaway
+REIG	first eigenvalue of the R matrix	Getaway
+R1u	R autocorrelation of lag 1 / unweighted	Getaway
+R2u	R autocorrelation of lag 2 / unweighted	Getaway
+R3u	R autocorrelation of lag 3 / unweighted	Getaway
+R4u	R autocorrelation of lag 4 / unweighted	Getaway
+R5u	R autocorrelation of lag 5 / unweighted	Getaway
+R6u	R autocorrelation of lag 6 / unweighted	Getaway
+R7u	R autocorrelation of lag 7 / unweighted	Getaway
+R8u	R autocorrelation of lag 8 / unweighted	Getaway
+RTu	R total index / unweighted	Getaway
+R1uplus	R maximal autocorrelation of lag 1 / unweighted	Getaway
+R2uplus	R maximal autocorrelation of lag 2 / unweighted	Getaway
+R3uplus	R maximal autocorrelation of lag 3 / unweighted	Getaway
+R4uplus	R maximal autocorrelation of lag 4 / unweighted	Getaway
+R5uplus	R maximal autocorrelation of lag 5 / unweighted	Getaway
+R6uplus	R maximal autocorrelation of lag 6 / unweighted	Getaway
+R7uplus	R maximal autocorrelation of lag 7 / unweighted	Getaway
+R8uplus	R maximal autocorrelation of lag 8 / unweighted	Getaway
+RTuplus	R maximal index / unweighted	Getaway
+R1m	R autocorrelation of lag 1 / weighted by atomic masses	Getaway
+R2m	R autocorrelation of lag 2 / weighted by atomic masses	Getaway
+R3m	R autocorrelation of lag 3 / weighted by atomic masses	Getaway
+R4m	R autocorrelation of lag 4 / weighted by atomic masses	Getaway
+R5m	R autocorrelation of lag 5 / weighted by atomic masses	Getaway
+R6m	R autocorrelation of lag 6 / weighted by atomic masses	Getaway
+R7m	R autocorrelation of lag 7 / weighted by atomic masses	Getaway
+R8m	R autocorrelation of lag 8 / weighted by atomic masses	Getaway
+RTm	R total index / weighted by atomic masses	Getaway
+R1mplus	R maximal autocorrelation of lag 1 / weighted by atomic masses	Getaway
+R2mplus	R maximal autocorrelation of lag 2 / weighted by atomic masses	Getaway
+R3mplus	R maximal autocorrelation of lag 3 / weighted by atomic masses	Getaway
+R4mplus	R maximal autocorrelation of lag 4 / weighted by atomic masses	Getaway
+R5mplus	R maximal autocorrelation of lag 5 / weighted by atomic masses	Getaway
+R6mplus	R maximal autocorrelation of lag 6 / weighted by atomic masses	Getaway
+R7mplus	R maximal autocorrelation of lag 7 / weighted by atomic masses	Getaway
+R8mplus	R maximal autocorrelation of lag 8 / weighted by atomic masses	Getaway
+RTmplus	R maximal index / weighted by atomic masses	Getaway
+R1v	R autocorrelation of lag 1 / weighted by atomic van der Waals volumes	Getaway
+R2v	R autocorrelation of lag 2 / weighted by atomic van der Waals volumes	Getaway
+R3v	R autocorrelation of lag 3 / weighted by atomic van der Waals volumes	Getaway
+R4v	R autocorrelation of lag 4 / weighted by atomic van der Waals volumes	Getaway
+R5v	R autocorrelation of lag 5 / weighted by atomic van der Waals volumes	Getaway
+R6v	R autocorrelation of lag 6 / weighted by atomic van der Waals volumes	Getaway
+R7v	R autocorrelation of lag 7 / weighted by atomic van der Waals volumes	Getaway
+R8v	R autocorrelation of lag 8 / weighted by atomic van der Waals volumes	Getaway
+RTv	R total index / weighted by atomic van der Waals volumes	Getaway
+R1vplus	R maximal autocorrelation of lag 1 / weighted by atomic van der Waals volumes	Getaway
+R2vplus	R maximal autocorrelation of lag 2 / weighted by atomic van der Waals volumes	Getaway
+R3vplus	R maximal autocorrelation of lag 3 / weighted by atomic van der Waals volumes	Getaway
+R4vplus	R maximal autocorrelation of lag 4 / weighted by atomic van der Waals volumes	Getaway
+R5vplus	R maximal autocorrelation of lag 5 / weighted by atomic van der Waals volumes	Getaway
+R6vplus	R maximal autocorrelation of lag 6 / weighted by atomic van der Waals volumes	Getaway
+R7vplus	R maximal autocorrelation of lag 7 / weighted by atomic van der Waals volumes	Getaway
+R8vplus	R maximal autocorrelation of lag 8 / weighted by atomic van der Waals volumes	Getaway
+RTvplus	R maximal index / weighted by atomic van der Waals volumes	Getaway
+R1e	R autocorrelation of lag 1 / weighted by atomic Sanderson electronegativities	Getaway
+R2e	R autocorrelation of lag 2 / weighted by atomic Sanderson electronegativities	Getaway
+R3e	R autocorrelation of lag 3 / weighted by atomic Sanderson electronegativities	Getaway
+R4e	R autocorrelation of lag 4 / weighted by atomic Sanderson electronegativities	Getaway
+R5e	R autocorrelation of lag 5 / weighted by atomic Sanderson electronegativities	Getaway
+R6e	R autocorrelation of lag 6 / weighted by atomic Sanderson electronegativities	Getaway
+R7e	R autocorrelation of lag 7 / weighted by atomic Sanderson electronegativities	Getaway
+R8e	R autocorrelation of lag 8 / weighted by atomic Sanderson electronegativities	Getaway
+RTe	R total index / weighted by atomic Sanderson electronegativities	Getaway
+R1eplus	R maximal autocorrelation of lag 1 / weighted by atomic Sanderson electronegativities	Getaway
+R2eplus	R maximal autocorrelation of lag 2 / weighted by atomic Sanderson electronegativities	Getaway
+R3eplus	R maximal autocorrelation of lag 3 / weighted by atomic Sanderson electronegativities	Getaway
+R4eplus	R maximal autocorrelation of lag 4 / weighted by atomic Sanderson electronegativities	Getaway
+R5eplus	R maximal autocorrelation of lag 5 / weighted by atomic Sanderson electronegativities	Getaway
+R6eplus	R maximal autocorrelation of lag 6 / weighted by atomic Sanderson electronegativities	Getaway
+R7eplus	R maximal autocorrelation of lag 7 / weighted by atomic Sanderson electronegativities	Getaway
+R8eplus	R maximal autocorrelation of lag 8 / weighted by atomic Sanderson electronegativities	Getaway
+RTeplus	R maximal index / weighted by atomic Sanderson electronegativities	Getaway
+R1p	R autocorrelation of lag 1 / weighted by atomic polarizabilities	Getaway
+R2p	R autocorrelation of lag 2 / weighted by atomic polarizabilities	Getaway
+R3p	R autocorrelation of lag 3 / weighted by atomic polarizabilities	Getaway
+R4p	R autocorrelation of lag 4 / weighted by atomic polarizabilities	Getaway
+R5p	R autocorrelation of lag 5 / weighted by atomic polarizabilities	Getaway
+R6p	R autocorrelation of lag 6 / weighted by atomic polarizabilities	Getaway
+R7p	R autocorrelation of lag 7 / weighted by atomic polarizabilities	Getaway
+R8p	R autocorrelation of lag 8 / weighted by atomic polarizabilities	Getaway
+RTp	R total index / weighted by atomic polarizabilities	Getaway
+R1pplus	R maximal autocorrelation of lag 1 / weighted by atomic polarizabilities	Getaway
+R2pplus	R maximal autocorrelation of lag 2 / weighted by atomic polarizabilities	Getaway
+R3pplus	R maximal autocorrelation of lag 3 / weighted by atomic polarizabilities	Getaway
+R4pplus	R maximal autocorrelation of lag 4 / weighted by atomic polarizabilities	Getaway
+R5pplus	R maximal autocorrelation of lag 5 / weighted by atomic polarizabilities	Getaway
+R6pplus	R maximal autocorrelation of lag 6 / weighted by atomic polarizabilities	Getaway
+R7pplus	R maximal autocorrelation of lag 7 / weighted by atomic polarizabilities	Getaway
+R8pplus	R maximal autocorrelation of lag 8 / weighted by atomic polarizabilities	Getaway
+RTpplus	R maximal index / weighted by atomic polarizabilities	Getaway

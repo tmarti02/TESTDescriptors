@@ -1,0 +1,202 @@
+DTXCID10684198
+  Mrv1533009301520382D          
+
+  0  0  0     0  0            999 V3000
+M  V30 BEGIN CTAB
+M  V30 COUNTS 17 17 0 0 0
+M  V30 BEGIN ATOM
+M  V30 1 O 5.7908 -0.4476 0 0
+M  V30 2 O 8.5014 -2.417 0 0
+M  V30 3 O 3.08 -2.417 0 0
+M  V30 4 O 8.4581 -0.4476 0 0
+M  V30 5 N 5.7908 -1.9876 0 0
+M  V30 6 C 6.5608 -4.3574 0 0
+M  V30 7 C 5.0206 -4.3574 0 0
+M  V30 8 C 4.5448 -2.8928 0 0
+M  V30 9 C 7.0366 -2.8928 0 0
+M  V30 10 C 7.1243 1.8626 0 0
+M  V30 11 C 7.1243 0.3226 0 0
+M  V30 12 C 7.1243 3.4026 0 0
+M  V30 13 H 8.0791 1.8626 0 0 MASS=2
+M  V30 14 H 6.1695 1.8626 0 0 MASS=2
+M  V30 15 H 7.1243 4.3574 0 0 MASS=2
+M  V30 16 H 8.0791 3.4026 0 0 MASS=2
+M  V30 17 H 6.1695 3.4026 0 0 MASS=2
+M  V30 END ATOM
+M  V30 BEGIN BOND
+M  V30 1 1 1 5
+M  V30 2 1 1 11
+M  V30 3 2 2 9
+M  V30 4 2 3 8
+M  V30 5 2 4 11
+M  V30 6 1 5 8
+M  V30 7 1 5 9
+M  V30 8 1 6 7
+M  V30 9 1 6 9
+M  V30 10 1 7 8
+M  V30 11 1 10 11
+M  V30 12 1 10 12
+M  V30 13 1 10 13
+M  V30 14 1 10 14
+M  V30 15 1 12 15
+M  V30 16 1 12 16
+M  V30 17 1 12 17
+M  V30 END BOND
+M  V30 END CTAB
+M  END
+>  <DSSTox_Compound_id>
+DTXCID10684198
+
+>  <DSSTox_Substance_id>
+DTXSID70733454
+
+>  <CASRN>
+454452-14-3
+
+>  <QC_Level>
+Public_Low
+
+>  <Preferred_name>
+1-[(~2~H_5_)Propanoyloxy]pyrrolidine-2,5-dione
+
+>  <Mol_Weight>
+176.1830000000
+
+>  <Mol_Formula>
+C7H4D5NO4
+
+>  <Monoisotopic_Mass>
+176.0845415030
+
+>  <Dashboard_URL>
+https://comptox.epa.gov/dashboard/DTXSID70733454
+
+$$$$
+DTXCID90696618
+  Mrv1533009301520422D          
+
+  0  0  0     0  0            999 V3000
+M  V30 BEGIN CTAB
+M  V30 COUNTS 12 12 0 0 0
+M  V30 BEGIN ATOM
+M  V30 1 O 5.7908 -0.4476 0 0
+M  V30 2 O 3.08 -2.417 0 0
+M  V30 3 O 8.5014 -2.417 0 0
+M  V30 4 O 8.4581 -0.4476 0 0
+M  V30 5 N 5.7908 -1.9876 0 0
+M  V30 6 C 6.5608 -4.3574 0 0
+M  V30 7 C 5.0206 -4.3574 0 0
+M  V30 8 C 4.5448 -2.8928 0 0
+M  V30 9 C 7.0366 -2.8928 0 0
+M  V30 10 C 7.1243 1.8626 0 0 MASS=13
+M  V30 11 C 7.1243 0.3226 0 0 MASS=13
+M  V30 12 C 7.1243 3.4026 0 0 MASS=13
+M  V30 END ATOM
+M  V30 BEGIN BOND
+M  V30 1 1 1 5
+M  V30 2 1 1 11
+M  V30 3 2 2 8
+M  V30 4 2 3 9
+M  V30 5 2 4 11
+M  V30 6 1 5 8
+M  V30 7 1 5 9
+M  V30 8 1 6 7
+M  V30 9 1 6 9
+M  V30 10 1 7 8
+M  V30 11 1 10 11
+M  V30 12 1 10 12
+M  V30 END BOND
+M  V30 END CTAB
+M  END
+>  <DSSTox_Compound_id>
+DTXCID90696618
+
+>  <DSSTox_Substance_id>
+DTXSID10745874
+
+>  <CASRN>
+862415-66-5
+
+>  <QC_Level>
+Public_Low
+
+>  <Preferred_name>
+1-[(~13~C_3_)Propanoyloxy]pyrrolidine-2,5-dione
+
+>  <Mol_Weight>
+174.1290000000
+
+>  <Mol_Formula>
+C4[13C]3H9NO4
+
+>  <Monoisotopic_Mass>
+174.0632222790
+
+>  <Dashboard_URL>
+https://comptox.epa.gov/dashboard/DTXSID10745874
+
+$$$$
+DTXCID30841988
+  Mrv1805 10041819212D          
+
+  0  0  0     0  0            999 V3000
+M  V30 BEGIN CTAB
+M  V30 COUNTS 12 12 0 0 0
+M  V30 BEGIN ATOM
+M  V30 1 C -3.7557 5.1393 0 0
+M  V30 2 C -3.4355 3.6329 0 0
+M  V30 3 C 1.8298 -0.2898 0 0
+M  V30 4 C 2.3057 1.1748 0 0
+M  V30 5 C 0.2898 -0.2898 0 0
+M  V30 6 C 1.0598 2.08 0 0
+M  V30 7 C -1.9709 3.157 0 0
+M  V30 8 N -0.1861 1.1748 0 0
+M  V30 9 O -0.6154 -1.5357 0 0
+M  V30 10 O 1.0598 3.62 0 0
+M  V30 11 O -0.8264 4.1875 0 0
+M  V30 12 O -1.6507 1.6507 0 0
+M  V30 END ATOM
+M  V30 BEGIN BOND
+M  V30 1 1 2 1
+M  V30 2 1 4 3
+M  V30 3 1 5 3
+M  V30 4 1 6 4
+M  V30 5 1 7 2
+M  V30 6 1 8 5
+M  V30 7 1 8 6
+M  V30 8 2 9 5
+M  V30 9 2 10 6
+M  V30 10 2 11 7
+M  V30 11 1 12 7
+M  V30 12 1 12 8
+M  V30 END BOND
+M  V30 END CTAB
+M  END
+>  <DSSTox_Compound_id>
+DTXCID30841988
+
+>  <DSSTox_Substance_id>
+DTXSID00952712
+
+>  <CASRN>
+30364-55-7
+
+>  <QC_Level>
+Public_Low
+
+>  <Preferred_name>
+1-(Propanoyloxy)pyrrolidine-2,5-dione
+
+>  <Mol_Weight>
+171.1520000000
+
+>  <Mol_Formula>
+C7H9NO4
+
+>  <Monoisotopic_Mass>
+171.0531577740
+
+>  <Dashboard_URL>
+https://comptox.epa.gov/dashboard/DTXSID00952712
+
+$$$$
