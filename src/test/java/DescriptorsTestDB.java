@@ -12,20 +12,19 @@ import gov.epa.TEST.Descriptors.DatabaseUtilities.DatabaseUtilities;
 import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_Utilities;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorData;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorsFromSmiles;
-public class DescriptorsTest {
+public class DescriptorsTestDB {
 
 	
-//	@Test
-//	public void testRetrieveFromDB() throws Exception {
-//		//TODO
-//	}
 	
 	@Test
 	public void compareToTESTGUI() throws Exception {	
 				
 		try {
 
+			Connection connDescriptors=SQLite_Utilities.getConnection(DescriptorsFromSmiles.filepathDB);
+			DatabaseUtilities.createDescriptorsDB(connDescriptors,"TESTDescriptors");
 
+			
 			InputStream ins=this.getClass().getClassLoader().getResourceAsStream("descriptors input.tsv");
 			InputStream ins2=this.getClass().getClassLoader().getResourceAsStream("descriptors output TEST5.1.tsv");
 			
@@ -40,7 +39,9 @@ public class DescriptorsTest {
 				
 				String []vals=Line.split("\t");
 				
-				String strDescriptors=DescriptorsFromSmiles.goDescriptors(vals[0], vals[1], null);				
+//				String strDescriptors=DescriptorsFromSmiles.goDescriptors(vals[0], vals[1], null);				
+				String strDescriptors=DescriptorsFromSmiles.goDescriptors(vals[0], vals[1],connDescriptors);	
+
 				
 				String [] newVals=strDescriptors.split("\t");
 				String [] guiVals=Line2.split("\t");

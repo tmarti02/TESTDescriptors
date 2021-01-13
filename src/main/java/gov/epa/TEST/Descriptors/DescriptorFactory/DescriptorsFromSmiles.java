@@ -10,10 +10,14 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import gov.epa.TEST.Descriptors.DatabaseUtilities.DatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_CreateTable;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_Utilities;
 import gov.epa.TEST.Descriptors.DescriptorUtilities.HueckelAromaticityDetector;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.LinkedHashMap;
 
 
@@ -24,7 +28,11 @@ public class DescriptorsFromSmiles {
 	static final String USER = "myuser";
 	static final String PASS = "Epa778899";
 	static final String strTEST_DB="TEST_Predictions";
-
+	
+	public static final String filepathDB="databases/descriptors.db";
+	static final String tableName="TESTDescriptors";
+	public static final String fieldNameKey="InChIKey1QSARReady";
+	public static final String fieldNameDescriptors="Descriptors";
 
 	public static boolean compressDescriptorsInDB=false;
 
@@ -58,7 +66,7 @@ public class DescriptorsFromSmiles {
 
 	
 
-	public static DescriptorData goDescriptors(String smiles,String inchiKey1,Connection conn) {
+	public static String goDescriptors(String smiles,String inchiKey1,Connection conn) {
 
 		AtomContainer ac=loadSMILES(smiles);
 		
@@ -68,11 +76,21 @@ public class DescriptorsFromSmiles {
 		try {
 			
 			if (conn!=null) {
-				DescriptorData ddDatabase=DatabaseUtilities.lookupDescriptorsInDatabase(ac,conn,inchiKey1,"InChIKey1_QSAR_Ready");
-				if (ddDatabase!=null) return ddDatabase;
+				
+				addHeaderRecord(conn, ac);
+								
+				String strDescriptors=DatabaseUtilities.lookupDescriptorsInDatabase(ac,conn,tableName,inchiKey1,fieldNameKey);
+				
+				if (strDescriptors!=null) {
+//					System.out.println("Found in db:"+strDescriptors);
+					DescriptorData dd=new DescriptorData();
+					//TODO convert to DD
+					return strDescriptors;
+				}
 			}
 
 			int descresult=-1;
+
 			DescriptorData dd=new DescriptorData();
 
 
@@ -108,10 +126,11 @@ public class DescriptorsFromSmiles {
 			}
 
 			//Store in db:
-			if (conn!=null) DatabaseUtilities.addRecordsToDescriptorDatabase(conn, dd,compressDescriptorsInDB);
+			String strDescriptors=dd.toStringDescriptorValues();								
+			if (conn!=null) DatabaseUtilities.addRecordsToDescriptorDatabase(conn, tableName,strDescriptors,inchiKey1,compressDescriptorsInDB);
 
 			////////////////////////////////////////
-			return dd;
+			return dd.toStringDescriptorValues();
 
 		} catch (Exception ex) {
 			logger.error("Error processing record {}: {} {}", inchiKey1, ex.getClass(), ex.getMessage());
@@ -121,12 +140,20 @@ public class DescriptorsFromSmiles {
 			ac.setProperty("Error", dd.Error);
 			ac.setProperty("ErrorCode", CheckAtomContainer.ERROR_CODE_DESCRIPTOR_CALCULATION_ERROR);
 
-			return dd;
+			return "Error:"+dd.Error;
 		}
 
 	}
+
+	private static void addHeaderRecord(Connection conn, AtomContainer ac) {
+		String headerKey="descriptorNames";
+		String strDescriptorNames=DatabaseUtilities.lookupDescriptorsInDatabase(ac,conn,tableName,headerKey,fieldNameKey);
+		if (strDescriptorNames==null) {
+			DatabaseUtilities.addRecordsToDescriptorDatabase(conn, tableName,DescriptorData.toStringDescriptorNames(),headerKey,compressDescriptorsInDB);
+		}
+	}
 	
-	public static DescriptorData goDescriptors(String smiles) {
+	public static String goDescriptors(String smiles) {
 		return goDescriptors(smiles, null, null);
 	}
 
@@ -215,11 +242,28 @@ public class DescriptorsFromSmiles {
 	}
 	
 	public static void main(String[] args) {
-		String smiles="c1ccc(O)cc1";
-		DescriptorData dd=goDescriptors(smiles,"phenol",null);
+		String smiles="OC(=O)C=C";
+		String inchiKey1="NIXOWILDQLNWCW";
+
+//		DescriptorData dd=goDescriptors(smiles,"phenol",null);
+//		
+//		System.out.println(dd);
+//		System.out.println(dd.toStringTranspose());
 		
-		System.out.println(dd);
-		System.out.println(dd.toStringTranspose());
+			
+		try {
+						
+			Connection connDescriptors=SQLite_Utilities.getConnection(filepathDB);
+			DatabaseUtilities.createDescriptorsDB(connDescriptors,"TESTDescriptors");
+			String strDescriptors=goDescriptors(smiles,inchiKey1,connDescriptors);			
+			System.out.println("Vals returned:"+strDescriptors);
+			
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 
 

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import org.openscience.cdk.AtomContainer;
 
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorData;
+import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorsFromSmiles;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -26,11 +27,8 @@ public class DatabaseUtilities {
 		
 		ArrayList<String> fields=new ArrayList<String>();
 
-		fields.add("CAS");
-//		fields.add("InChi");
-		fields.add("InChiKey");
-		fields.add("Descriptors");
-		fields.add("error");
+		fields.add(DescriptorsFromSmiles.fieldNameKey);
+		fields.add(DescriptorsFromSmiles.fieldNameDescriptors);
 				
 		String[] strFields = new String[fields.size()];
 		strFields = fields.toArray(strFields);
@@ -49,11 +47,11 @@ public class DatabaseUtilities {
 		return colNum;
 	}
 	
-	static void createDescriptorsDB(Connection connDescriptors,String primaryKey) throws SQLException {
+	public static void createDescriptorsDB(Connection connDescriptors,String tableName) throws SQLException {
 //		String [] fields= {"CAS","Descriptors"};//Add inchii key???
 		Statement stat=connDescriptors.createStatement();
 		String [] fields=getFieldsDescriptors();
-		create_table(stat,"Descriptors",fields);
+		create_table(stat,tableName,fields);
 	}
 	
 	
@@ -72,12 +70,9 @@ public class DatabaseUtilities {
 	
 			String sql = "create table if not exists " + table + " (";
 	
-			int count = 0;// number of fields
-	
 	
 			for (int i = 0; i < fields.length; i++) {
 				sql += fields[i] + " TEXT,";
-				count++;
 			}
 	
 	
@@ -91,6 +86,10 @@ public class DatabaseUtilities {
 			//			System.out.println(sql);
 	
 			stat.executeUpdate(sql);
+			
+			String sqlAddIndex="CREATE INDEX if not exists idx ON "+table+" ("+fields[0]+")";
+			stat.executeUpdate(sqlAddIndex);
+
 	
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -120,29 +119,24 @@ public class DatabaseUtilities {
 
 	}
 	
-	public static DescriptorData getDescriptors(ResultSet rs,boolean compressDescriptorsInDB) {
+	public static String getDescriptors(ResultSet rs,boolean compressDescriptorsInDB) {
 
 		try {
 			
-			String strDescriptors="Descriptors";
+			String strFieldName=DescriptorsFromSmiles.fieldNameDescriptors;
 			
-			int colNum = getColNum(rs, strDescriptors);
+			int colNum = getColNum(rs, strFieldName);
 
-			String strJSON=null;
+			String strDescriptors=null;
 			if (compressDescriptorsInDB) {
 				byte [] bytes=rs.getBytes(colNum);
-				strJSON=StringCompression.decompress(bytes, Charset.forName("UTF-8"));
+				strDescriptors=StringCompression.decompress(bytes, Charset.forName("UTF-8"));
 			} else {
-				strJSON=rs.getString(colNum);
+				strDescriptors=rs.getString(colNum);
 			}
 
 //			System.out.println(strJSON);
-			
-			
-			if (strJSON==null || strJSON.isEmpty()) return null;
-			
-			DescriptorData dd=null;//TODO
-			return dd;
+			return strDescriptors;
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -150,7 +144,7 @@ public class DatabaseUtilities {
 		}
 	}
 	
-	public static DescriptorData lookupDescriptorsInDatabase(AtomContainer ac,Connection conn,String fieldValue,String fieldName) {
+	public static String lookupDescriptorsInDatabase(AtomContainer ac,Connection conn,String tableName,String fieldValue,String fieldName) {
 		//		if (usePreviousDescriptors && InChiKey!=null) {
 
 		if (fieldValue==null) return null;
@@ -158,12 +152,12 @@ public class DatabaseUtilities {
 		try {
 			long t1=System.currentTimeMillis();
 			Statement statDescriptors=conn.createStatement();
-			DescriptorData dd=DatabaseUtilities.getDescriptors(statDescriptors, fieldName,fieldValue,compressDescriptorsInDB);
+			String descriptors=DatabaseUtilities.getDescriptors(statDescriptors, tableName,fieldName,fieldValue,compressDescriptorsInDB);
 			long t2=System.currentTimeMillis();
 
-			if (dd!=null) {
+			if (descriptors!=null) {
 				logger.info("Time to load descriptors from db:"+(t2-t1));
-				return dd;
+				return descriptors;
 			}
 
 		} catch (Exception ex) {
@@ -172,12 +166,12 @@ public class DatabaseUtilities {
 		return null;
 	}
 	
-	public static DescriptorData getDescriptors(Statement stat,String searchField,String searchValue,boolean compressDescriptorsInDB) {
+	public static String getDescriptors(Statement stat,String tableName,String searchField,String searchValue,boolean compressDescriptorsInDB) {
 //		long t1=System.currentTimeMillis();
 
 		try {
 			
-			ResultSet rs = getRecords(stat,"Descriptors", searchField,searchValue);
+			ResultSet rs = getRecords(stat,tableName, searchField,searchValue);
 			
 			if (!rs.next()) return null;
 			
@@ -206,29 +200,17 @@ public class DatabaseUtilities {
 		}
 	}
 	
-	public static void addRecordsToDescriptorDatabase(Connection conn,DescriptorData dd,boolean compressDescriptors) {
+	public static void addRecordsToDescriptorDatabase(Connection conn,String table,String strDescriptors,String inchiKey1,boolean compressDescriptors) {
 		try {
 
 			String [] fields=getFieldsDescriptors();
-			String table="Descriptors";
+			
 			
 			String s = create_sql_insert(fields, table);			
 			PreparedStatement prep= conn.prepareStatement(s);
 
 			int i=1;
-			prep.setString(i++, dd.ID);
-//			prep.setString(i++, dd.InChi);
-			prep.setString(i++, dd.InChiKey);
-			
-			//			prep.setString(i++, dd.to_JSON_String(dd,true));
-//			long t1=System.currentTimeMillis();
-			String strDescriptors="";
-			
-//			System.out.println(dd.CAS+"\t"+strJSON);
-			
-//			long t2=System.currentTimeMillis();
-//			logger.info("Time to convert to json string="+(t2-t1));
-			
+			prep.setString(i++, inchiKey1);
 			
 			if (compressDescriptors) {
 				byte [] bytesJSON=StringCompression.compress(strDescriptors,Charset.forName("UTF-8"));
@@ -237,20 +219,9 @@ public class DatabaseUtilities {
 				prep.setString(i++, strDescriptors);
 			}
 			
-			prep.setString(i++, dd.Error);
-			
-//			long t3=System.currentTimeMillis();
-//			logger.info("Time to compress="+(t3-t2));
-			
-//			prep.addBatch();
-//			int [] count=prep.executeBatch();
-			
+								
 			prep.executeUpdate();
 //			
-//			long t4=System.currentTimeMillis();
-//			logger.info("Time to execute update="+(t4-t3));
-			
-			//			System.out.println(count.length);
 
 		} catch (Exception ex) {
 			System.out.println(ex.getMessage());

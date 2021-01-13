@@ -20,7 +20,6 @@ public class DescriptorData {
 	
 	public String ID=""; // chemical abstract number
 	public String Error;
-	
 	public String InChiKey;
 	public String InChi;
 	public String InChi_Warning;
@@ -3520,8 +3519,7 @@ public class DescriptorData {
 				values.add("Error: "+Error.replace("\n", "").replace("\r", ""));
 				return values;
 			}
-				
-			
+							
 			DecimalFormat myD8 = new DecimalFormat("0.########");
 			DecimalFormat myD = new DecimalFormat("0");
 
