@@ -8,18 +8,12 @@ import java.util.Vector;
 
 import org.junit.Test;
 
-import gov.epa.TEST.Descriptors.DatabaseUtilities.DatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.DescriptorDatabaseUtilities;
 import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_Utilities;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorData;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorsFromSmiles;
 public class DescriptorsTest {
 
-	
-//	@Test
-//	public void testRetrieveFromDB() throws Exception {
-//		//TODO
-//	}
-	
 	@Test
 	public void compareToTESTGUI() throws Exception {	
 				
@@ -40,7 +34,7 @@ public class DescriptorsTest {
 				
 				String []vals=Line.split("\t");
 				
-				String strDescriptors=DescriptorsFromSmiles.goDescriptors(vals[0], vals[1], null);				
+				String strDescriptors=DescriptorsFromSmiles.goDescriptors(vals[0], null,null);				
 				
 				String [] newVals=strDescriptors.split("\t");
 				String [] guiVals=Line2.split("\t");

@@ -9,7 +9,9 @@ import org.openscience.cdk.smiles.SmilesParser;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import gov.epa.TEST.Descriptors.DatabaseUtilities.DatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.DescriptorDatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.RecordDescriptors;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.RecordDescriptorsMetadata;
 import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_CreateTable;
 import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_Utilities;
 import gov.epa.TEST.Descriptors.DescriptorUtilities.HueckelAromaticityDetector;
@@ -18,27 +20,16 @@ import java.io.File;
 import java.io.FileWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 
 public class DescriptorsFromSmiles {
 	public static boolean dashboardStructuresAvailable=true;
 
-	static final String mySQL_DB_URL = "jdbc:mysql://localhost/";
-	static final String USER = "myuser";
-	static final String PASS = "Epa778899";
-	static final String strTEST_DB="TEST_Predictions";
-	
-	public static final String filepathDB="databases/descriptors.db";
-	static final String tableName="TESTDescriptors";
-	public static final String fieldNameKey="InChIKey1QSARReady";
-	public static final String fieldNameDescriptors="Descriptors";
 
-	public static boolean compressDescriptorsInDB=false;
 
 	private static final Logger logger = LogManager.getLogger(DescriptorsFromSmiles.class);
-
-
 
 
 	private static void writeJSON(String filePath,Object object) {
@@ -66,7 +57,10 @@ public class DescriptorsFromSmiles {
 
 	
 
-	public static String goDescriptors(String smiles,String inchiKey1,Connection conn) {
+	public static String goDescriptors(String smiles,String DSSTox_Structure_Id,Connection conn) {
+
+
+		String descriptorSoftware=RecordDescriptorsMetadata.softwareTEST;
 
 		AtomContainer ac=loadSMILES(smiles);
 		
@@ -76,15 +70,10 @@ public class DescriptorsFromSmiles {
 		try {
 			
 			if (conn!=null) {
-				
-				addHeaderRecord(conn, ac);
-								
-				String strDescriptors=DatabaseUtilities.lookupDescriptorsInDatabase(ac,conn,tableName,inchiKey1,fieldNameKey);
+				String strDescriptors=RecordDescriptors.lookupDescriptorsInDatabase(conn,DSSTox_Structure_Id,descriptorSoftware);
 				
 				if (strDescriptors!=null) {
 //					System.out.println("Found in db:"+strDescriptors);
-					DescriptorData dd=new DescriptorData();
-					//TODO convert to DD
 					return strDescriptors;
 				}
 			}
@@ -111,7 +100,7 @@ public class DescriptorsFromSmiles {
 				dd.Error=df.errorMsg;//store error message in dd
 				//TODO should we have stored error in dd to begin with?
 
-				logger.error("Error processing record {}: {}", inchiKey1,dd.Error);
+				logger.error("Error processing record {}: {}", DSSTox_Structure_Id,dd.Error);
 				ac.setProperty("Error", dd.Error);
 				ac.setProperty("ErrorCode", CheckAtomContainer.ERROR_CODE_DESCRIPTOR_CALCULATION_ERROR);
 			} else {
@@ -126,17 +115,24 @@ public class DescriptorsFromSmiles {
 			}
 
 			//Store in db:
-			String strDescriptors=dd.toStringDescriptorValues();								
-			if (conn!=null) DatabaseUtilities.addRecordsToDescriptorDatabase(conn, tableName,strDescriptors,inchiKey1,compressDescriptorsInDB);
+							
+			RecordDescriptors r=new RecordDescriptors();
+			r.Descriptors=dd.toStringDescriptorValues();
+			r.DescriptorSoftware=descriptorSoftware;
+			r.DSSTox_Structure_Id=DSSTox_Structure_Id;
+			
+//			System.out.println(r.Descriptors);
+						
+			if (conn!=null) r.addRecord(conn);
 
 			////////////////////////////////////////
-			return dd.toStringDescriptorValues();
+			return r.Descriptors;
 
 		} catch (Exception ex) {
-			logger.error("Error processing record {}: {} {}", inchiKey1, ex.getClass(), ex.getMessage());
+			logger.error("Error processing record {}: {} {}", DSSTox_Structure_Id, ex.getClass(), ex.getMessage());
 			logger.catching(ex);
 			DescriptorData dd = new DescriptorData();
-			dd.Error = "Error processing record " + inchiKey1 + ", error=" + ex.getMessage();
+			dd.Error = "Error processing record " + DSSTox_Structure_Id + ", error=" + ex.getMessage();
 			ac.setProperty("Error", dd.Error);
 			ac.setProperty("ErrorCode", CheckAtomContainer.ERROR_CODE_DESCRIPTOR_CALCULATION_ERROR);
 
@@ -145,13 +141,7 @@ public class DescriptorsFromSmiles {
 
 	}
 
-	private static void addHeaderRecord(Connection conn, AtomContainer ac) {
-		String headerKey="descriptorNames";
-		String strDescriptorNames=DatabaseUtilities.lookupDescriptorsInDatabase(ac,conn,tableName,headerKey,fieldNameKey);
-		if (strDescriptorNames==null) {
-			DatabaseUtilities.addRecordsToDescriptorDatabase(conn, tableName,DescriptorData.toStringDescriptorNames(),headerKey,compressDescriptorsInDB);
-		}
-	}
+	
 	
 	public static String goDescriptors(String smiles) {
 		return goDescriptors(smiles, null, null);
@@ -241,29 +231,21 @@ public class DescriptorsFromSmiles {
 	
 	}
 	
+	
+
+	
 	public static void main(String[] args) {
-		String smiles="OC(=O)C=C";
-		String inchiKey1="NIXOWILDQLNWCW";
-
-//		DescriptorData dd=goDescriptors(smiles,"phenol",null);
-//		
-//		System.out.println(dd);
-//		System.out.println(dd.toStringTranspose());
+//		String smiles="OC(=O)C=C";
+//		String inchiKey1="NIXOWILDQLNWCW";
 		
-			
-		try {
-						
-			Connection connDescriptors=SQLite_Utilities.getConnection(filepathDB);
-			DatabaseUtilities.createDescriptorsDB(connDescriptors,"TESTDescriptors");
-			String strDescriptors=goDescriptors(smiles,inchiKey1,connDescriptors);			
-			System.out.println("Vals returned:"+strDescriptors);
-			
-		
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		String smiles="OC(=O)C=CXXX";
+		String inchiKey1="XXXXXXXXXXXX";
 
+
+		String strDescriptors=goDescriptors(smiles,"CID123",null);
+					
+//		System.out.println("Vals returned:"+strDescriptors);
+			
 	}
 
 

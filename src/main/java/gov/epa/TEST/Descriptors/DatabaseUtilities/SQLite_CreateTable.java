@@ -16,21 +16,15 @@ public class SQLite_CreateTable {
 	
 			int count = 0;// number of fields
 	
-	
 			for (int i = 0; i < fields.length; i++) {
-				sql += fields[i] + " TEXT,";
+				sql += fields[i] + " TEXT";
+				
+				if (i<fields.length-1) sql+=",";
 				count++;
 			}
-	
-	
-			// Trim off trailing comma:
-			if (sql.substring(sql.length() - 1, sql.length()).equals(",")) {
-				sql = sql.substring(0, sql.length() - 1);
-			}
-	
 			sql += ");";
 	
-			//			System.out.println(sql);
+			System.out.println(sql);
 	
 			stat.executeUpdate(sql);
 	
@@ -239,39 +233,7 @@ public class SQLite_CreateTable {
 	
 	}
 
-	public static void addDataToTable(Connection conn,String table,String [] fields,String[] values) {
 	
-		try {
-	
-			String s="insert into "+table+" values (";
-	
-			for (int i=1;i<=fields.length;i++) {
-				s+="?";
-				if (i<fields.length) s+=",";
-			}
-			s+=");";
-	
-			PreparedStatement prep = conn.prepareStatement(s);
-	
-			for (int i=0;i<=1;i++) {
-				int field = 1;
-				for (int j=1;j<=fields.length;j++) {
-					prep.setString(field++, values[j]);
-				}
-				prep.addBatch();
-			}
-	
-			conn.setAutoCommit(false);
-			prep.executeBatch();
-			conn.setAutoCommit(true);
-	
-	
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
-	
-	
-	}
 
 	/**
 	 * Create sqlite database table with CAS as primary key (needs unique values for this to work)

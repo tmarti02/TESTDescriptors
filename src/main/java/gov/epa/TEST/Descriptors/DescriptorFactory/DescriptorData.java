@@ -3699,8 +3699,6 @@ public class DescriptorData {
 			result+=fieldNames.get(i);
 			if (i<fieldNames.size()-1) result+="\t";			
 		}
-		
-		
 		return result;
 	}
 

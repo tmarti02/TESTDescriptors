@@ -8,7 +8,8 @@ import java.util.Vector;
 
 import org.junit.Test;
 
-import gov.epa.TEST.Descriptors.DatabaseUtilities.DatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.DescriptorDatabaseUtilities;
+import gov.epa.TEST.Descriptors.DatabaseUtilities.RecordDescriptorsMetadata;
 import gov.epa.TEST.Descriptors.DatabaseUtilities.SQLite_Utilities;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorData;
 import gov.epa.TEST.Descriptors.DescriptorFactory.DescriptorsFromSmiles;
@@ -21,9 +22,10 @@ public class DescriptorsTestDB {
 				
 		try {
 
-			Connection connDescriptors=SQLite_Utilities.getConnection(DescriptorsFromSmiles.filepathDB);
-			DatabaseUtilities.createDescriptorsDB(connDescriptors,"TESTDescriptors");
-
+			String descriptorSoftware=RecordDescriptorsMetadata.softwareTEST;
+			String descriptorNames=DescriptorData.toStringDescriptorNames();
+			
+			Connection connDescriptors=DescriptorDatabaseUtilities.getConnection(descriptorSoftware,descriptorNames,"databases/datasets.db");
 			
 			InputStream ins=this.getClass().getClassLoader().getResourceAsStream("descriptors input.tsv");
 			InputStream ins2=this.getClass().getClassLoader().getResourceAsStream("descriptors output TEST5.1.tsv");
